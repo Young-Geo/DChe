@@ -11,3 +11,7 @@ CurlWrap.h
 CurlWrap.cpp
 Android.mk
 Application.mk
+GeoHash.h
+GeoHash.cpp
+testmain.cpp
+testmain.cpp

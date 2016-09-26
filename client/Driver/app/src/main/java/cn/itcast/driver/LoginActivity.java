@@ -1,5 +1,6 @@
 package cn.itcast.driver;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -21,7 +22,7 @@ public class LoginActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Login();
-                Log.e(tag, "login end xxxxxxxxxx");
+                Log.e(tag, "login end yyyyyyyyyyy");
             }
         });
     }
@@ -42,6 +43,14 @@ public class LoginActivity extends AppCompatActivity {
         boolean ret = Jni.getInstance().Login(username, password);
         if(ret )
         {
+            // jump to WaitOrder
+            Intent intent = new Intent();
+            intent.setClass(LoginActivity.this, WaitOrderActivity.class);
+            startActivity(intent);
+
+            // kill self
+            this.finish();
+
             Log.e(tag, "login ok");
         }
         else

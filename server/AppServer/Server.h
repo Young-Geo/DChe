@@ -29,6 +29,11 @@ public:
     /* json */
     void response(HttpServerResponse& resp, QJsonObject obj);
 
+    void handleLogin(QJsonObject reqJson, Tufao::HttpServerResponse&);
+    void handleSetStatus(QJsonObject reqJson, Tufao::HttpServerResponse&);
+    void handleOrderGet(QJsonObject reqJson, Tufao::HttpServerResponse&);
+
+
 signals:
 
 public slots:

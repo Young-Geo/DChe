@@ -18,38 +18,33 @@ USE `bc`;
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `user`
+-- Table structure for table `torder`
 --
 
-DROP TABLE IF EXISTS `user`;
+DROP TABLE IF EXISTS `torder`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `user` (
-  `userid` varchar(48) NOT NULL,
-  `username` varchar(45) NOT NULL,
-  `password` varchar(45) NOT NULL,
-  `tel` varchar(45) DEFAULT NULL,
-  `email` varchar(45) DEFAULT NULL,
-  `status` int(11) NOT NULL DEFAULT '0',
-  `lng` double DEFAULT NULL,
-  `lat` double DEFAULT NULL,
-  `geohash` varchar(10) DEFAULT NULL,
-  `workstatus` int(11) DEFAULT NULL,
-  `sessionid` varchar(45) DEFAULT NULL,
-  PRIMARY KEY (`userid`),
-  UNIQUE KEY `userid_UNIQUE` (`userid`),
-  UNIQUE KEY `username_UNIQUE` (`username`)
+CREATE TABLE `torder` (
+  `orderid` varchar(48) NOT NULL,
+  `userid` varchar(45) DEFAULT NULL,
+  `driverid` varchar(45) DEFAULT NULL,
+  `start_lng` double DEFAULT NULL,
+  `start_lat` double DEFAULT NULL,
+  `end_lng` double DEFAULT NULL,
+  `end_lat` double DEFAULT NULL,
+  `price` int(11) DEFAULT NULL,
+  `status` int(11) DEFAULT NULL,
+  PRIMARY KEY (`orderid`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `user`
+-- Dumping data for table `torder`
 --
 
-LOCK TABLES `user` WRITE;
-/*!40000 ALTER TABLE `user` DISABLE KEYS */;
-INSERT INTO `user` VALUES ('aaaa','aaaa','aaaa','aaaa','aaaa',0,0,0,'0',0,NULL);
-/*!40000 ALTER TABLE `user` ENABLE KEYS */;
+LOCK TABLES `torder` WRITE;
+/*!40000 ALTER TABLE `torder` DISABLE KEYS */;
+/*!40000 ALTER TABLE `torder` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 

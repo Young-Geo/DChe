@@ -1,7 +1,7 @@
 
 dir=$1
-rm $dir/app/src/main/jniLibs -rf
-mkdir $dir/app/src/main/jniLibs
+mkdir -p $dir/app/src/main/jniLibs/armeabi
 cd $dir/jni
 ndk-build
-cp ../libs/armeabi ../app/src/main/jniLibs -R
+cp ../libs/armeabi/* ../app/src/main/jniLibs/armeabi -R
+echo "copy end"

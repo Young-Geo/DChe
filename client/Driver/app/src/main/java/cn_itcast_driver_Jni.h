@@ -15,6 +15,22 @@ extern "C" {
 JNIEXPORT jboolean JNICALL Java_cn_itcast_driver_Jni_Login
   (JNIEnv *, jobject, jstring, jstring);
 
+/*
+ * Class:     cn_itcast_driver_Jni
+ * Method:    SetStatus
+ * Signature: (I)Z
+ */
+JNIEXPORT jboolean JNICALL Java_cn_itcast_driver_Jni_SetStatus
+  (JNIEnv *, jobject, jint);
+
+/*
+ * Class:     cn_itcast_driver_Jni
+ * Method:    UpdateGeoInfo
+ * Signature: (DD)I
+ */
+JNIEXPORT jint JNICALL Java_cn_itcast_driver_Jni_UpdateGeoInfo
+  (JNIEnv *, jobject, jdouble, jdouble);
+
 #ifdef __cplusplus
 }
 #endif

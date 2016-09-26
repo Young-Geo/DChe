@@ -28,6 +28,28 @@ JNIEXPORT jboolean JNICALL Java_cn_itcast_driver_Jni_Login
     return ret;
 }
 
+/*
+ * Class:     cn_itcast_driver_Jni
+ * Method:    SetStatus
+ * Signature: (I)Z
+ */
+JNIEXPORT jboolean JNICALL Java_cn_itcast_driver_Jni_SetStatus
+  (JNIEnv *, jobject, jint status)
+{
+    return SetStatus(status);
+}
+
+/*
+ * Class:     cn_itcast_driver_Jni
+ * Method:    UpdateGeoInfo
+ * Signature: (DD)I
+ */
+JNIEXPORT jint JNICALL Java_cn_itcast_driver_Jni_UpdateGeoInfo
+  (JNIEnv *, jobject, jdouble lng, jdouble lat)
+{
+    return UpdateGeoInfo(lng, lat);
+}
+
 #ifdef __cplusplus
 }
 #endif

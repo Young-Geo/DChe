@@ -59,6 +59,7 @@ const char *JsonWrap::value(const char *key)
     if(json == NULL) return NULL;
 
     cJSON* obj = cJSON_GetObjectItem(json, key);
+    if(obj == NULL) return NULL;
 
     return obj->valuestring; // result: ok
 }

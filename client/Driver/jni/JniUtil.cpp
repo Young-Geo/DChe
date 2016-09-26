@@ -4,6 +4,7 @@
 
 #include "JniUtil.h"
 #include <string.h>
+#include <stdio.h>
 
 char *JniUtil::JString2CStr(JNIEnv *env, jstring str)
 {
@@ -36,4 +37,16 @@ jstring JniUtil::CStr2JString(JNIEnv *env, const char *cstr)
 void JniUtil::DeleteCStr(char *cstr)
 {
     delete[] cstr;
+}
+
+char *JniUtil::convert(int value, char *buf)
+{
+    sprintf(buf, "%d", value);
+    return buf;
+}
+
+char *JniUtil::convert(double value, char* buf)
+{
+    sprintf(buf, "%.10f", value);
+    return buf;
 }
